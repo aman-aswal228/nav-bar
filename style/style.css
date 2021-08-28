@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0px 100px 0px 100px;
+    flex-wrap: wrap;
+}
+
+nav .logo{
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+ 
+nav ul li a.active,
+nav ul li a:hover{
+    border-color: orange;
+    color: orange;
+}
+
+.menu-btn i{
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.content{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+@media(max-width:1000px){
+    nav{
+        padding: 0px 40px 0px 50px ;
+    }
+}
+
+@media(max-width:920px){
+
+    nav{
+        padding: 0 50px 0 50px;
+    }
+   nav .menu-btn i{
+       display: block;
+   }
+
+   #click:checked ~ .menu-btn i:before{
+       content: '\f00d';
+   }
+
+   nav ul{
+       position: fixed;
+       top: 80px;
+       left: -100%;
+       background: black;
+       height: 100vh;
+       width: 100%;
+       text-align: center;
+       display: block;
+       transition: all 0.3s ease;
+   }
+
+   #click:checked ~ ul{
+    left: 0px;
+   }
+
+   nav ul li{
+       width: 100%;
+       margin: 40px 0;
+   }
+
+   nav ul li a{
+       width: 100%;
+       margin-left: -100%;
+       display: block;
+       font-size: 20px;
+       transition: 0.6s;
+   }
+
+   #click:checked ~ ul li a{
+    margin-left: 0px;
+   }
+
+}
